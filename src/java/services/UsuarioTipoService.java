@@ -4,10 +4,9 @@
  * and open the template in the editor.
  */
 package services;
-import dao.UsuarioDao;
-import javax.ws.rs.Path;
 
-@Path("/usuarioservice")
-public class UsuarioService extends AbstractJpaService<UsuarioDao> {
+import dao.UsuarioTipoDao;
 
+public class UsuarioTipoService extends AbstractJpaService<UsuarioTipoDao> {
+    
 }

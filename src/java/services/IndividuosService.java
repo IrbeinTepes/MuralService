@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package services;
 
-import model.MuralappUsuario;
+import dao.IndividuosDao;
 
 /**
  *
  * @author IrbeinTepes
  */
-public class MuralappUsuarioDao extends JpaDaoBase<MuralappUsuario>{
+public class IndividuosService extends AbstractJpaService<IndividuosDao> {
     
 }

@@ -3,11 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package services;
-import dao.UsuarioDao;
-import javax.ws.rs.Path;
+package dao;
 
-@Path("/usuarioservice")
-public class UsuarioService extends AbstractJpaService<UsuarioDao> {
+import model.InscitIndividuosCabelo;
 
+/**
+ *
+ * @author IrbeinTepes
+ */
+public class IndividuosCabeloDao extends JpaDaoBase<InscitIndividuosCabelo> {
+    
 }
