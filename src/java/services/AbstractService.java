@@ -34,7 +34,6 @@ public abstract class AbstractService {
     public void validateSession() {
         if (getSession().getAttribute("username") == null) {
             throw new WebApplicationException(Response.Status.UNAUTHORIZED);
-
         }
     }
 

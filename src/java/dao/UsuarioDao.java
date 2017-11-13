@@ -5,7 +5,9 @@
  */
 package dao;
 
+import javax.persistence.Query;
 import model.MuralappUsuario;
+import persistence.JpaUtil;
 
 /**
  *
@@ -13,4 +15,11 @@ import model.MuralappUsuario;
  */
 public class UsuarioDao extends JpaDaoBase<MuralappUsuario>{
     
+        public static MuralappUsuario login(MuralappUsuario user) {
+        Query query = JpaUtil.getEntityManager().createQuery("select u from model.MuralappUsuario u where u.usrLogin= :login and u.usrSenha= :senha ")
+                .setParameter("login", user.getUsrLogin())
+                .setParameter("senha", user.getUsrSenha());
+        return (MuralappUsuario)query.getResultList().get(0);
+    }
+        
 }

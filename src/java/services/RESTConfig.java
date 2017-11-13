@@ -3,18 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package services;
 
-import javax.persistence.Query;
-import model.InscitIndividuos;
-import model.MuralappUsuario;
-import persistence.JpaUtil;
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
 
 /**
  *
  * @author IrbeinTepes
  */
-public class IndividuosDao extends JpaDaoBase<InscitIndividuos> {
 
-
-}
+@ApplicationPath("/MuralService")
+public class RESTConfig extends Application {
+    // intentionally empty
+} 

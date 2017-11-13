@@ -57,6 +57,13 @@ public class MuralappUsuario implements IEntity {
         this.id = usrId;
     }
 
+    public MuralappUsuario(String usrLogin, String usrSenha) {
+        this.usrLogin = usrLogin;
+        this.usrSenha = usrSenha;
+    }
+    
+    
+
     public Integer getId() {
         return id;
     }
