@@ -11,6 +11,8 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -28,6 +30,7 @@ public class MuralappUsuarioTipo implements IEntity {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @NotNull
     @Column(name = "usr_tipo_id")
