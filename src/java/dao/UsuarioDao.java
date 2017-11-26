@@ -13,13 +13,17 @@ import persistence.JpaUtil;
  *
  * @author IrbeinTepes
  */
-public class UsuarioDao extends JpaDaoBase<MuralappUsuario>{
-    
-        public static MuralappUsuario login(MuralappUsuario user) {
-        Query query = JpaUtil.getEntityManager().createQuery("select u from model.MuralappUsuario u where u.usrLogin= :login and u.usrSenha= :senha ")
+public class UsuarioDao extends JpaDaoBase<MuralappUsuario> {
+
+    public static MuralappUsuario login(MuralappUsuario user) {
+        System.out.println(user.getUsrLogin());
+        System.out.println(user.getUsrSenha());
+
+        
+        Query query = JpaUtil.getEntityManager().createQuery("select u from model.MuralappUsuario u WHERE u.usrLogin = :login and u.usrSenha = :senha")
                 .setParameter("login", user.getUsrLogin())
                 .setParameter("senha", user.getUsrSenha());
-        return (MuralappUsuario)query.getResultList().get(0);
+        return (MuralappUsuario) (query.getResultList().isEmpty() ? new MuralappUsuario() : query.getResultList().get(0));
     }
-        
+
 }

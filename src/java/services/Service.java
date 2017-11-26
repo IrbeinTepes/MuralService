@@ -11,9 +11,9 @@ public interface Service<T> {
 
     void save(String entity);
 
-    String findById(Long id);
+    String findById(Integer id);
 
-    void remove(Long id);
+    void remove(Integer id);
 
 //    String findAllBetween(int pagina);
 }

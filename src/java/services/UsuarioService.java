@@ -15,6 +15,7 @@ public class UsuarioService extends AbstractJpaService<UsuarioDao> {
     @POST
     @Path("/login")
     public String validaLogin(String entity) {
+        System.out.println(gson.toJson(UsuarioDao.login(gson.fromJson(entity, dao.getEntityClass()))));
         return gson.toJson(UsuarioDao.login(gson.fromJson(entity, dao.getEntityClass())));
     }
     

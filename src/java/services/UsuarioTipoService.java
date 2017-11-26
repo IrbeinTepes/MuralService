@@ -6,7 +6,9 @@
 package services;
 
 import dao.UsuarioTipoDao;
+import javax.ws.rs.Path;
 
+@Path("usuariotiposervice/")
 public class UsuarioTipoService extends AbstractJpaService<UsuarioTipoDao> {
     
 }

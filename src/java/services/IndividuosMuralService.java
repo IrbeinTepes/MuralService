@@ -6,11 +6,13 @@
 package services;
 
 import dao.IndividuosMuralDao;
+import javax.ws.rs.Path;
 
 /**
  *
  * @author IrbeinTepes
  */
+@Path("individuosmuralservice/")
 public class IndividuosMuralService extends AbstractJpaService<IndividuosMuralDao> {
     
 }

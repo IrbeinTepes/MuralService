@@ -6,11 +6,13 @@
 package services;
 
 import dao.FotoDao;
+import javax.ws.rs.Path;
 
 /**
  *
  * @author IrbeinTepes
  */
+@Path("fotoservice/")
 public class FotoService extends AbstractJpaService<FotoDao> {
     
 }

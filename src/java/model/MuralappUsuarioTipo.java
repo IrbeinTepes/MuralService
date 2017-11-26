@@ -39,7 +39,7 @@ public class MuralappUsuarioTipo implements IEntity {
     @Column(name = "usr_tipo_nome")
     private String usrTipoNome;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usrTipoId")
-    private Collection<MuralappUsuario> muralappUsuarioCollection;
+    private transient Collection<MuralappUsuario> muralappUsuarioCollection;
 
     public MuralappUsuarioTipo() {
     }

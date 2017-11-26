@@ -6,11 +6,13 @@
 package services;
 
 import dao.IndividuosCorDao;
+import javax.ws.rs.Path;
 
 /**
  *
  * @author IrbeinTepes
  */
+@Path("individuoscorservice/")
 public class IndividuosCorService extends AbstractJpaService<IndividuosCorDao> {
     
 }

@@ -23,7 +23,6 @@ public abstract class AbstractJpaService<T extends JpaDaoBase> extends AbstractS
         } catch (InstantiationException | IllegalAccessException ex) {
             Logger.getLogger(AbstractJpaService.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     @GET
@@ -41,14 +40,14 @@ public abstract class AbstractJpaService<T extends JpaDaoBase> extends AbstractS
     @GET
     @Path("{id}")
     @Override
-    public String findById(@PathParam("id") Long id) {
+    public String findById(@PathParam("id") Integer id) {
         return gson.toJson(dao.findById(id));
     }
 
     @DELETE
     @Path("{id}")
     @Override
-    public void remove(@PathParam("id") Long id) {
+    public void remove(@PathParam("id") Integer id) {
         dao.remove(id);
     }
 

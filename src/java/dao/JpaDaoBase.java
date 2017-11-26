@@ -36,7 +36,7 @@ public abstract class JpaDaoBase<T extends IEntity> implements Dao<T> {
     }
 
     @Override
-    public T findById(Long id) {
+    public T findById(Integer id) {
         return JpaUtil.getEntityManager().find(entityClass, id);
     }
 
