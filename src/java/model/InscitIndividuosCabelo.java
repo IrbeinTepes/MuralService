@@ -43,8 +43,6 @@ public class InscitIndividuosCabelo implements IEntity {
     @Size(min = 1, max = 60)
     @Column(name = "indcabelo_ds")
     private String indcabeloDs;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "indcabeloId")
-    private Collection<InscitIndividuos> inscitIndividuosCollection;
 
     public InscitIndividuosCabelo() {
     }
@@ -72,15 +70,6 @@ public class InscitIndividuosCabelo implements IEntity {
 
     public void setIndcabeloDs(String indcabeloDs) {
         this.indcabeloDs = indcabeloDs;
-    }
-
-    @XmlTransient
-    public Collection<InscitIndividuos> getInscitIndividuosCollection() {
-        return inscitIndividuosCollection;
-    }
-
-    public void setInscitIndividuosCollection(Collection<InscitIndividuos> inscitIndividuosCollection) {
-        this.inscitIndividuosCollection = inscitIndividuosCollection;
     }
 
     @Override

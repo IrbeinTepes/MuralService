@@ -38,8 +38,6 @@ public class MuralappUsuarioTipo implements IEntity {
     @Size(max = 45)
     @Column(name = "usr_tipo_nome")
     private String usrTipoNome;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usrTipoId")
-    private transient Collection<MuralappUsuario> muralappUsuarioCollection;
 
     public MuralappUsuarioTipo() {
     }
@@ -62,15 +60,6 @@ public class MuralappUsuarioTipo implements IEntity {
 
     public void setUsrTipoNome(String usrTipoNome) {
         this.usrTipoNome = usrTipoNome;
-    }
-
-    @XmlTransient
-    public Collection<MuralappUsuario> getMuralappUsuarioCollection() {
-        return muralappUsuarioCollection;
-    }
-
-    public void setMuralappUsuarioCollection(Collection<MuralappUsuario> muralappUsuarioCollection) {
-        this.muralappUsuarioCollection = muralappUsuarioCollection;
     }
 
     @Override

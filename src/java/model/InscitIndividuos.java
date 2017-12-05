@@ -8,6 +8,7 @@ package model;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -117,11 +118,9 @@ public class InscitIndividuos implements IEntity {
     @JoinColumn(name = "indolhos_id", referencedColumnName = "indolhos_id")
     @ManyToOne(optional = false)
     private InscitIndividuosOlhos indolhosId;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "indId")
-    private Collection<MuralappIndMural> muralappIndMuralCollection;
-    @OneToMany(mappedBy = "indId")
-    private Collection<InscitFoto> inscitFotoCollection;
-
+    @OneToMany(mappedBy = "indId",cascade = CascadeType.ALL)
+    private List<InscitFoto> inscitFotoCollection;
+    
     public InscitIndividuos() {
     }
 
@@ -329,24 +328,6 @@ public class InscitIndividuos implements IEntity {
         this.indolhosId = indolhosId;
     }
 
-    @XmlTransient
-    public Collection<MuralappIndMural> getMuralappIndMuralCollection() {
-        return muralappIndMuralCollection;
-    }
-
-    public void setMuralappIndMuralCollection(Collection<MuralappIndMural> muralappIndMuralCollection) {
-        this.muralappIndMuralCollection = muralappIndMuralCollection;
-    }
-
-    @XmlTransient
-    public Collection<InscitFoto> getInscitFotoCollection() {
-        return inscitFotoCollection;
-    }
-
-    public void setInscitFotoCollection(Collection<InscitFoto> inscitFotoCollection) {
-        this.inscitFotoCollection = inscitFotoCollection;
-    }
-
     @Override
     public int hashCode() {
         int hash = 0;
@@ -370,6 +351,14 @@ public class InscitIndividuos implements IEntity {
     @Override
     public String toString() {
         return "model.InscitIndividuos[ indId=" + id + " ]";
+    }
+
+    public List<InscitFoto> getInscitFotoCollection() {
+        return inscitFotoCollection;
+    }
+
+    public void setInscitFotoCollection(List<InscitFoto> inscitFotoCollection) {
+        this.inscitFotoCollection = inscitFotoCollection;
     }
     
 }

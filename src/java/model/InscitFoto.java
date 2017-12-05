@@ -24,6 +24,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import utils.Exclude;
 
 /**
  *
@@ -56,6 +57,7 @@ public class InscitFoto implements IEntity {
     private String fotoResp;
     @JoinColumn(name = "ind_id", referencedColumnName = "ind_id")
     @ManyToOne
+    @Exclude
     private InscitIndividuos indId;
 
     public InscitFoto() {

@@ -43,8 +43,6 @@ public class InscitIndividuosCor implements IEntity {
     @Size(min = 1, max = 60)
     @Column(name = "indcor_ds")
     private String indcorDs;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "indcorId")
-    private Collection<InscitIndividuos> inscitIndividuosCollection;
 
     public InscitIndividuosCor() {
     }
@@ -74,14 +72,6 @@ public class InscitIndividuosCor implements IEntity {
         this.indcorDs = indcorDs;
     }
 
-    @XmlTransient
-    public Collection<InscitIndividuos> getInscitIndividuosCollection() {
-        return inscitIndividuosCollection;
-    }
-
-    public void setInscitIndividuosCollection(Collection<InscitIndividuos> inscitIndividuosCollection) {
-        this.inscitIndividuosCollection = inscitIndividuosCollection;
-    }
 
     @Override
     public int hashCode() {

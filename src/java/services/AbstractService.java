@@ -24,7 +24,7 @@ public abstract class AbstractService {
     protected final Gson gson;
 
     public AbstractService() {
-        gson = new GsonBuilder().setExclusionStrategies(new AnnotationExclusionStrategy()).create();
+        gson = new GsonBuilder().setExclusionStrategies(new AnnotationExclusionStrategy()).setDateFormat("yyyy-MM-dd").create();
     }
 
     public HttpSession getSession() {

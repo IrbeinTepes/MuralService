@@ -5,6 +5,7 @@
  */
 package model;
 
+import com.google.gson.annotations.Expose;
 import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -20,12 +21,12 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author IrbeinTepes
  */
+
 @Entity
 @Table(name = "muralapp_usuario")
 @XmlRootElement
@@ -47,8 +48,6 @@ public class MuralappUsuario implements IEntity {
     @JoinColumn(name = "usr_tipo_id", referencedColumnName = "usr_tipo_id")
     @ManyToOne(optional = false)
     private MuralappUsuarioTipo usrTipoId;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usrId")
-    private Collection<MuralappIndMural> muralappIndMuralCollection;
 
     public MuralappUsuario() {
     }
@@ -95,16 +94,7 @@ public class MuralappUsuario implements IEntity {
     public void setUsrTipoId(MuralappUsuarioTipo usrTipoId) {
         this.usrTipoId = usrTipoId;
     }
-
-    @XmlTransient
-    public Collection<MuralappIndMural> getMuralappIndMuralCollection() {
-        return muralappIndMuralCollection;
-    }
-
-    public void setMuralappIndMuralCollection(Collection<MuralappIndMural> muralappIndMuralCollection) {
-        this.muralappIndMuralCollection = muralappIndMuralCollection;
-    }
-
+    
     @Override
     public int hashCode() {
         int hash = 0;
