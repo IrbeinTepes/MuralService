@@ -38,5 +38,5 @@ public class PesquisaDao {
         }
         Query query =  JpaUtil.getEntityManager().createQuery(queryString);
         return query.getResultList();
-     } 
-}
+     }   
+} 
