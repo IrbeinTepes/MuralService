@@ -27,6 +27,6 @@ public class PesquisaService extends AbstractJpaService<JpaDaoBase> {
     @Path("/characteristics")
     public String pesquisa(String listaCaracteristicas) {
         return gson.toJson(PesquisaDao.pesquisa( gson.fromJson(listaCaracteristicas, int[].class)));
-    } 
+    }
 
 }
